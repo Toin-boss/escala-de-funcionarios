@@ -7,10 +7,16 @@ import java.util.Scanner;
 
 public class Escala {
     
+    Scanner scan = new Scanner(System.in);
+
     private Funcionario funcionario;
     private int horario;
     private String folga;
     
+    private String entrada;
+    private String saida;
+    private String intervaloE;
+    private String intervaloS;
 
     public Escala(Funcionario funcionario) {
         this.funcionario = funcionario;
@@ -46,22 +52,22 @@ public class Escala {
         this.folga = folga;
     }
 
-    public String cadastroEscala(){
-        Scanner scan = new Scanner(System.in);
+    public void cadastroEscalaV(){
+        
         //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
 
         System.out.println("Digite a hora no formato HH:mm (Ex.: 12:30)");
         //try {
             System.out.print("Horário de entrada: ");
-            String entrada = scan.nextLine();
+            entrada = scan.nextLine();
 
             System.out.print("Horário de saída: ");
-            String saida = scan.nextLine();
+            saida = scan.nextLine();
 
             System.out.print("Intervalo: ");
-            String intervaloE = scan.nextLine();
+            intervaloE = scan.nextLine();
             System.out.println(" as ");
-            String intervaloS = scan.nextLine();
+            intervaloS = scan.nextLine();
             
             //LocalTime hora1 = LocalTime.parse(entrada, formatter);
             //LocalTime hora2 = LocalTime.parse(saida, formatter);
@@ -71,8 +77,13 @@ public class Escala {
         //} catch (DateTimeParseException e) {
             //System.out.println("Formato de horário inválido! Use o padrão.");
         //}
-        scan.close();
-        return "Horário de entrada: " + entrada + "\nHorário de saída: " + saida + "\nIntervalo das " + intervaloE + " as " + intervaloS;
+        
+        //return "Horário de entrada: " + entrada + "\nHorário de saída: " + saida + "\nIntervalo das " + intervaloE + " as " + intervaloS;
+    }
+    
+    public String cadastroEscalaR (){
+            return "Horário de entrada: " + entrada + "\nHorário de saída: " + saida + "\nIntervalo das " + intervaloE + " as " + intervaloS;
+
     }
     
 }
